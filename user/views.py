@@ -1,10 +1,23 @@
+import imp
+from re import template
+from django.views.generic import ListView, TemplateView
 from django.shortcuts import render
 from django.views.generic import FormView
 from user.forms import SignInForm, LoginForm
 from django.urls import reverse
 from django.shortcuts import redirect
 from django.contrib.auth import logout
+from user.models import User
+from django.views.generic.detail import DetailView
 
+
+class UserView(ListView):
+    model = User
+    template_name = "users.html"
+    paginate_by = 2
+
+class UserDetailView(TemplateView):
+    template_name = "user.html"
 
 def log_in(request):
     if request.user.is_authenticated:

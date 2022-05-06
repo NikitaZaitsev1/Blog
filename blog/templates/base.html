@@ -23,8 +23,11 @@
             <a href="{% url 'signin_page' %}">Sing In|</a>
             <a href="{% url 'login_page' %}">Log In|</a>
             {% else %}
-            <a href="#">Account|</a>
+            <a href="{% url 'user_page' %}">Account|</a>
             <a href="{% url 'logout_page' %}">Log out|</a>
+            {% endif %}
+            {% if user.is_staff %}
+            <a href="/admin/">Admin|</a>
             {% endif %}
         </h1>
         {% endblock %}

@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load blog_lib %}
+{% block content %}
+    <h1>
+        Account {% if user.full_name %}{{ user.full_name }}{% else %}{{ user.username }}{% endif %}
+    </h1>
+    <p>
+        {{ user.last_login }}<br>{{ user.is_active }}
+    </p>
+    <ul>
+    {% for user_permission in user.user_permissions.all %}
+    <li>
+        {{ user_permission.name }}
+    </li>
+    {% endfor %}
+    </ul>
+{% endblock %}
