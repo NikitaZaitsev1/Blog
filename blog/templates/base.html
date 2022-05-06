@@ -10,13 +10,13 @@
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
     <link rel="stylesheet" href="{% static 'css/blog.css' %}">
     <link href="https://fonts.googleapis.com/css?family=Lobster&subset=latin,cyrillic" rel="stylesheet" type="text/css">
-    <title>Technology companies</title>
+    <title>Cryptocurrency Blog</title>
 </head>
 
 <body>
     <div class="page-header">
         {% block navigation %}
-        <h1><a href="/">Technology companies|</a>
+        <h1><a href="/">Cryptocurrency Blog|</a>
             <a href="{% url 'about_page' %}">About|</a>
             <a href="{% url 'contacts_page' %}">Contacts|</a>
             {% if not user.is_authenticated %}
