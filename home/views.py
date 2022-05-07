@@ -9,7 +9,6 @@ from django.urls import reverse
 from django.utils import timezone
 
 
-
 def home_view(request):
     return render(request, "home.html", {})
 

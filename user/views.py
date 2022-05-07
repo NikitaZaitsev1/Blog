@@ -16,8 +16,10 @@ class UserView(ListView):
     template_name = "users.html"
     paginate_by = 2
 
+
 class UserDetailView(TemplateView):
     template_name = "user.html"
+
 
 def log_in(request):
     if request.user.is_authenticated:
